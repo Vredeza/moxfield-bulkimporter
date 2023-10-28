@@ -1,0 +1,17 @@
+img {
+    display: none;
+}
+
+tbody>tr:hover img {
+    display: block;
+    position: absolute;
+}
+
+tbody>tr:hover * {
+    background-color: #2d2d2d;
+}
+
+.cardNumber {
+    width: 3%;
+    text-align: center;
+}

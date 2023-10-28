@@ -17,7 +17,7 @@ function SetInput({text = 'Import', onImport, placeHolder = ''}) {
     }
 
     return(
-        <div className={"extensionInput"}>
+        <div className={"setInput"}>
             <input type={"text"} onKeyDown={handleKeyPress} onChange={(event) => setSet(event.target.value)} placeholder={placeHolder}/>
             <input type={"button"} value={text} onClick={() => importData(set)} className={set.length >= 1 ? "available" : ""}/>
         </div>

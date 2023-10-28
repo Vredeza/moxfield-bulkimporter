@@ -1,0 +1,16 @@
+.available {
+    cursor: pointer;
+}
+
+.available:hover {
+    border-color: #ff007f;
+}
+
+button {
+    border: 2px solid #6e6e6e; /* Bordure */
+    border-radius: 20px; /* Coins arrondis */
+    padding: 8px 16px; /* Espacement intérieur */
+    font-size: 14px; /* Taille de police */
+    outline: none; /* Supprimer la mise en évidence au focus */
+    transition: border-color 0.3s;
+}

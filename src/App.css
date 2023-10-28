@@ -11,3 +11,20 @@ a:focus {
 a:hover {
   color: #ff007f;
 }
+
+body {
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-right: 10%;
+}
+
+#settings{
+  max-width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.setMessage{
+  font-size: 20px;
+}
