@@ -1,2 +1,2 @@
-# moxfield-bulkimporter
+# BIMF - BulkImporter for MoxField
 Moxfield collection CSV generator.
