@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bimf/static/css/main.a86f965b.css",
+    "main.js": "/bimf/static/js/main.beab8904.js",
+    "index.html": "/bimf/index.html",
+    "main.a86f965b.css.map": "/bimf/static/css/main.a86f965b.css.map",
+    "main.beab8904.js.map": "/bimf/static/js/main.beab8904.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a86f965b.css",
+    "static/js/main.beab8904.js"
+  ]
+}
