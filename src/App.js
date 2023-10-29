@@ -1,6 +1,6 @@
 import './App.css';
 import SetInput from "./SetInput";
-import axios, {get} from "axios";
+import axios from "axios";
 import CardTab from "./CardTab";
 import {useState} from "react";
 import LanguageSelector from "./LanguageSelector";
