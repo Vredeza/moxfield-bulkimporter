@@ -1,7 +1,11 @@
 import CardTabRow from "./CardTabRow";
 import "./CardTab.css"
+import {useState} from "react";
+import axios from "axios";
 
 function CardTab({cards, cardAmounts, setCardAmounts, foilCardAmounts, setFoilCardAmounts   }) {
+
+    const [symbology, setSymbology] = useState([])
 
     const handleUpdateCardAmount = (index, newValue) => {
         console.log("nouvelle valeur")
@@ -16,6 +20,24 @@ function CardTab({cards, cardAmounts, setCardAmounts, foilCardAmounts, setFoilCa
         newFoilCardAmounts[index] = newValue;
         setFoilCardAmounts(newFoilCardAmounts);
     };
+
+    if (Object.keys(symbology).length === 0) {
+        axios.get("https://api.scryfall.com/symbology")
+            .then((response) => {
+
+                let formatedSymbology = [];
+
+                response.data.data.forEach(symbol => {
+                    formatedSymbology[symbol.symbol] = symbol.svg_uri;
+                });
+
+                setSymbology(formatedSymbology);
+                console.log(symbology);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
     return (
         <table className={"cardTab"}>
@@ -35,6 +57,7 @@ function CardTab({cards, cardAmounts, setCardAmounts, foilCardAmounts, setFoilCa
                     key={index}
                     updateCardAmount={(newValue) => handleUpdateCardAmount(index, newValue)}
                     updateFoilCardAmount={(newValue) => handleUpdateFoilCardAmount(index, newValue)}
+                    symbology={symbology}
                 />
             ))}
             </tbody>

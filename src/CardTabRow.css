@@ -1,8 +1,8 @@
-img {
+.cardImage {
     display: none;
 }
 
-tbody>tr:hover img {
+tbody>tr:hover .cardImage {
     display: block;
     position: absolute;
 }

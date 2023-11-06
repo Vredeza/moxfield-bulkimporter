@@ -1,7 +1,8 @@
 import "./CardTabRow.css"
 import QuantitySelector from "./QuantitySelector";
+import ManaCost from "./ManaCost";
 
-function CardTabRow({card, updateCardAmount, updateFoilCardAmount}){
+function CardTabRow({card, updateCardAmount, updateFoilCardAmount, symbology}){
 
     let imageUri
     let mana_cost
@@ -22,10 +23,14 @@ function CardTabRow({card, updateCardAmount, updateFoilCardAmount}){
             <td id={"name"}>
                 <a href={card.scryfall_uri} target="_blank" rel="noreferrer">
                     {card.name}
-                    <img src={imageUri} alt={card.name} loading="lazy"/>
+                    <img src={imageUri} alt={card.name} loading="lazy" className={"cardImage"}/>
                 </a>
             </td>
-            <td>{mana_cost}</td>
+            <td>
+                {Object.keys(symbology).length !== 0 &&
+                    <ManaCost manaCost={mana_cost} symbology={symbology}/>
+                }
+            </td>
             <td><QuantitySelector updateQuantity={updateCardAmount}/></td>
             <td><QuantitySelector updateQuantity={updateFoilCardAmount}/></td>
         </tr>
