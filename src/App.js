@@ -95,7 +95,7 @@ function App() {
                 data.push({
                     "Count": foilCardAmounts[index],
                     "Tradelist Count": foilCardAmounts[index],
-                    "Name": card.name,
+                    "Name": `"${card.name}"`,
                     "Edition": card.set,
                     "Condition": "Near Mint",
                     "Language": language,
