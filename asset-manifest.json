@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bimf/static/css/main.e9994aab.css",
-    "main.js": "/bimf/static/js/main.7e0d8ebc.js",
+    "main.js": "/bimf/static/js/main.465a9fd9.js",
     "index.html": "/bimf/index.html",
     "main.e9994aab.css.map": "/bimf/static/css/main.e9994aab.css.map",
-    "main.7e0d8ebc.js.map": "/bimf/static/js/main.7e0d8ebc.js.map"
+    "main.465a9fd9.js.map": "/bimf/static/js/main.465a9fd9.js.map"
   },
   "entrypoints": [
     "static/css/main.e9994aab.css",
-    "static/js/main.7e0d8ebc.js"
+    "static/js/main.465a9fd9.js"
   ]
 }
