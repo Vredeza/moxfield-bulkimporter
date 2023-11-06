@@ -16,7 +16,7 @@ function ManaCost({manaCost, symbology}){
                     />
                 ))
                 :
-                <p>-</p>
+                <>-</>
             }
         </div>
     );
