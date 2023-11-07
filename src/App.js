@@ -2,7 +2,7 @@ import './App.css';
 import SetInput from "./SetInput";
 import axios from "axios";
 import CardTab from "./CardTab";
-import {Component, useState} from "react";
+import {useState} from "react";
 import LanguageSelector from "./LanguageSelector";
 import DownloadButton from "./DownloadButton";
 import Loading from "./Loading";
@@ -51,6 +51,7 @@ function App() {
                 });
             })
             .catch(error => {
+                console.log(error)
                 setSetMessage("Unable to find set")
                 setCards([])
             });
