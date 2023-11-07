@@ -40,6 +40,7 @@ function App() {
     const getSet = (setAcronym) => {
         axios.get(`https://api.scryfall.com/sets/${setAcronym}`)
             .then(response => {
+
                 console.log("extension trouvée, acquisition des cartes")
                 setSetMessage(`Set : ${response.data.name}`)
                 setCards([])
@@ -152,10 +153,6 @@ function App() {
             {cards.length === 0 && setMessage !== "" &&
                 <Loading/>
             }
-
-            <footer>
-                <a href="https://github.com/Vredeza/bimf">GitHub repository</a>
-            </footer>
         </div>
     );
 }
