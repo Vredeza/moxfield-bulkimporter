@@ -26,10 +26,6 @@ input[type=number] {
         transition: border-color 0.3s;
     }
 
-    & input:focus {
-        border-color: #ff007f;
-    }
-
     & button {
         cursor: pointer;
         transition: border-color 0.3s;
@@ -37,6 +33,10 @@ input[type=number] {
 
     & button:hover {
         border-color: #ff007f;
+    }
+
+    & .null {
+        color: #6e6e6e;
     }
 }
 
