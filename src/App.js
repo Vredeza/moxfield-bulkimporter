@@ -2,9 +2,12 @@ import './App.css';
 import SetInput from "./SetInput";
 import axios from "axios";
 import CardTab from "./CardTab";
-import {useState} from "react";
+import {Component, useState} from "react";
 import LanguageSelector from "./LanguageSelector";
 import DownloadButton from "./DownloadButton";
+import Loading from "./Loading";
+
+
 
 function App() {
 
@@ -39,6 +42,7 @@ function App() {
             .then(response => {
                 console.log("extension trouvée, acquisition des cartes")
                 setSetMessage(`Set : ${response.data.name}`)
+                setCards([])
                 getAllCards(response.data.search_uri).then(cards => {
                     setCards(cards)
                     console.log(cards);
@@ -144,6 +148,13 @@ function App() {
                 />
             }
 
+            {cards.length === 0 && setMessage !== "" &&
+                <Loading/>
+            }
+
+            <footer>
+                <a href="https://github.com/Vredeza/bimf">GitHub repository</a>
+            </footer>
         </div>
     );
 }

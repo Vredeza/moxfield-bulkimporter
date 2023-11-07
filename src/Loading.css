@@ -1,0 +1,22 @@
+.loadingImg {
+    pointer-events: none;
+    text-align: center;
+    animation: loadingImg-spin infinite 1.2s linear;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes loadingImg-spin {
+    0% {
+        transform: translateX(20px);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+.loadingImg img {
+    height: 20vmin;
+}
