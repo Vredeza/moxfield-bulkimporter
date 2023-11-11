@@ -5,23 +5,25 @@ function QuantitySelector({updateQuantity}) {
 
     const [quantity, setQuantity] = useState(0)
 
+    const changeQuantity = (newQuantity) => {
+        setQuantity(newQuantity)
+        updateQuantity(newQuantity)
+    }
+
     const increment = () => {
-        setQuantity(quantity + 1);
-        updateQuantity(quantity);
+        changeQuantity(quantity + 1);
     }
 
     const decrement = () => {
         if (quantity > 0) {
-            setQuantity(quantity -1);
-            updateQuantity(quantity);
+            changeQuantity(quantity -1);
         }
     }
 
     const requestNewValue = () => {
         let newValue = prompt("New amount : ", quantity.toString())
         if (!isNaN(newValue)) { // is a number
-            setQuantity(parseFloat(newValue));
-            updateQuantity(parseFloat(newValue));
+            changeQuantity(parseFloat(newValue));
         }
     }
 
