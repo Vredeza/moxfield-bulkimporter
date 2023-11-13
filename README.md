@@ -1,4 +1,4 @@
-<img src="public/ratIcon.ico" align="right" style="max-width: 8%" />
+<img src="public/ratIcon.ico" align="right" style="max-width: 5%" />
 
 # BIMF - BulkImporter for MoxField
 
