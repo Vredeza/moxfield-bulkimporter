@@ -1,3 +1,5 @@
+<img src="public/ratIcon.ico" align="right" style="max-width: 15%" />
+
 # BIMF - BulkImporter for MoxField
 
 Unofficial Moxfield tool to import multiple cards from a single MTG set.
