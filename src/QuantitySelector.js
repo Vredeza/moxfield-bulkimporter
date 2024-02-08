@@ -21,17 +21,21 @@ function QuantitySelector({updateQuantity}) {
     }
 
     const requestNewValue = () => {
-        let newValue = prompt("New amount : ", quantity.toString())
-        if (!isNaN(newValue)) { // is a number
-            changeQuantity(parseFloat(newValue));
+        let newValue = prompt("New amount : ", quantity.toString());
+        if (newValue !== null && newValue.trim() !== "") {
+            if (!isNaN(newValue)) {
+                changeQuantity(parseFloat(newValue));
+            } else {
+                alert("Please enter a valid number.");
+            }
         }
-    }
+    };
 
     return (
         <div className={"quantitySelector"}>
 
             <button onClick={decrement}>-</button>
-            <button className={quantity === 0 && "null"} onClick={requestNewValue}>{quantity}</button>
+            <button className={quantity === 0 ? "null" : ""} onClick={requestNewValue}>{quantity}</button>
             <button onClick={increment}>+</button>
 
         </div>
