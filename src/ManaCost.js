@@ -3,17 +3,28 @@ import "./ManaCost.css"
 function ManaCost({manaCost, symbology}){
 
     let formatedManaCost;
-    manaCost === "-" ? formatedManaCost = [] : formatedManaCost = manaCost.match(/{[^}]+}/g)
+    if (manaCost === "-") {
+        formatedManaCost = [];
+    } else {
+        const splitManaCost = manaCost.split(" // ");
+        formatedManaCost = splitManaCost.map(part => part.match(/{[^}]+}/g));
+    }
+
+    console.log(formatedManaCost)
 
     return (
         <div className={"manaCost"}>
             {formatedManaCost.length !== 0 ?
                 formatedManaCost.map((cost, index) => (
-                    <img
-                        key={index}
-                        src={symbology[cost]}
-                        alt={cost}
-                    />
+                    <>
+                        {index > 0 && " // "}
+                        {cost.map((symbol, i) => (
+                            <>
+                                <img src={symbology[symbol]} alt={symbol}/>
+                                {i < cost.length - 1 && " "}
+                            </>
+                        ))}
+                    </>
                 ))
                 :
                 <>-</>
