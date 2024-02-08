@@ -10,8 +10,6 @@ function ManaCost({manaCost, symbology}){
         formatedManaCost = splitManaCost.map(part => part.match(/{[^}]+}/g));
     }
 
-    console.log(formatedManaCost)
-
     return (
         <div className={"manaCost"}>
             {formatedManaCost.length !== 0 ?
