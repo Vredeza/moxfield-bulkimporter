@@ -149,7 +149,7 @@ function App() {
                 />
             }
 
-            {cards.length === 0 && setMessage !== "" &&
+            {cards.length === 0 && setMessage !== "" && setMessage !== "Unable to find set" &&
                 <Loading/>
             }
             <div><button onClick={() => console.log(cards)}></button></div>
