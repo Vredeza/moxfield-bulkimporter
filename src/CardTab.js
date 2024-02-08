@@ -8,14 +8,12 @@ function CardTab({cards, cardAmounts, setCardAmounts, foilCardAmounts, setFoilCa
     const [symbology, setSymbology] = useState([])
 
     const handleUpdateCardAmount = (index, newValue) => {
-        console.log("nouvelle valeur")
         const newCardAmounts = [...cardAmounts];
         newCardAmounts[index] = newValue;
         setCardAmounts(newCardAmounts);
     };
 
     const handleUpdateFoilCardAmount = (index, newValue) => {
-        console.log("nouvelle valeur foil")
         const newFoilCardAmounts = [...foilCardAmounts];
         newFoilCardAmounts[index] = newValue;
         setFoilCardAmounts(newFoilCardAmounts);
@@ -32,7 +30,6 @@ function CardTab({cards, cardAmounts, setCardAmounts, foilCardAmounts, setFoilCa
                 });
 
                 setSymbology(formatedSymbology);
-                console.log(symbology);
             })
             .catch((error) => {
                 console.log(error);

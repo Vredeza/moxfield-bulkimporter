@@ -46,7 +46,6 @@ function App() {
                 setCards([])
                 getAllCards(response.data.search_uri).then(cards => {
                     setCards(cards)
-                    console.log(cards);
                     setCardAmounts(Array(cards.length).fill(0))
                     setFoilCardAmounts(Array(cards.length).fill(0))
                 });
@@ -153,6 +152,7 @@ function App() {
             {cards.length === 0 && setMessage !== "" &&
                 <Loading/>
             }
+            <div><button onClick={() => console.log(cards)}></button></div>
         </div>
     );
 }
