@@ -1,22 +1,15 @@
 import "./QuantitySelector.css"
 import {useState} from "react";
 
-function QuantitySelector({updateQuantity}) {
-
-    const [quantity, setQuantity] = useState(0)
-
-    const changeQuantity = (newQuantity) => {
-        setQuantity(newQuantity)
-        updateQuantity(newQuantity)
-    }
+function QuantitySelector({updateQuantity, quantity}) {
 
     const increment = () => {
-        changeQuantity(quantity + 1);
+        updateQuantity(quantity + 1);
     }
 
     const decrement = () => {
         if (quantity > 0) {
-            changeQuantity(quantity -1);
+            updateQuantity(quantity -1);
         }
     }
 
@@ -24,7 +17,7 @@ function QuantitySelector({updateQuantity}) {
         let newValue = prompt("New amount : ", quantity.toString());
         if (newValue !== null && newValue.trim() !== "") {
             if (!isNaN(newValue)) {
-                changeQuantity(parseFloat(newValue));
+                updateQuantity(parseFloat(newValue));
             } else {
                 alert("Please enter a valid number.");
             }

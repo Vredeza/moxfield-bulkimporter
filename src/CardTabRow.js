@@ -2,7 +2,7 @@ import "./CardTabRow.css"
 import QuantitySelector from "./QuantitySelector";
 import ManaCost from "./ManaCost";
 
-function CardTabRow({card, updateCardAmount, updateFoilCardAmount, symbology}){
+function CardTabRow({card, cardAmount, foilCardAmount, updateCardAmount, updateFoilCardAmount, symbology}){
 
     let imageUri
     let mana_cost
@@ -31,8 +31,8 @@ function CardTabRow({card, updateCardAmount, updateFoilCardAmount, symbology}){
                     <ManaCost manaCost={mana_cost} symbology={symbology}/>
                 }
             </td>
-            <td><QuantitySelector updateQuantity={updateCardAmount}/></td>
-            <td><QuantitySelector updateQuantity={updateFoilCardAmount}/></td>
+            <td><QuantitySelector updateQuantity={updateCardAmount} quantity={cardAmount}/></td>
+            <td><QuantitySelector updateQuantity={updateFoilCardAmount} quantity={foilCardAmount}/></td>
         </tr>
     )
 }

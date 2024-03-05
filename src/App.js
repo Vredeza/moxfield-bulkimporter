@@ -6,6 +6,7 @@ import {useState} from "react";
 import LanguageSelector from "./LanguageSelector";
 import DownloadButton from "./DownloadButton";
 import Loading from "./Loading";
+import CardAdder from "./CardAdder";
 
 
 
@@ -19,6 +20,18 @@ function App() {
 
     const [cardAmounts, setCardAmounts] = useState([]);
     const [foilCardAmounts, setFoilCardAmounts] = useState([]);
+
+    const updateCardAmount = (index, newValue) => {
+        const newCardAmounts = [...cardAmounts];
+        newCardAmounts[index] = newValue;
+        setCardAmounts(newCardAmounts);
+    };
+
+    const updateFoilCardAmount = (index, newValue) => {
+        const newFoilCardAmounts = [...foilCardAmounts];
+        newFoilCardAmounts[index] = newValue;
+        setFoilCardAmounts(newFoilCardAmounts);
+    };
 
     const getAllCards = async (searchUri, allData = []) => {
         try {
@@ -140,20 +153,24 @@ function App() {
             <p className={"setMessage"}>{setMessage}</p>
 
             {cards.length !== 0 &&
-                <CardTab
-                    cards={cards}
-                    cardAmounts={cardAmounts}
-                    setCardAmounts={setCardAmounts}
-                    foilCardAmounts={foilCardAmounts}
-                    setFoilCardAmounts={setFoilCardAmounts}
-                />
+                <>
+                    <CardAdder/>
+                    <CardTab
+                        cards={cards}
+                        cardAmounts={cardAmounts}
+                        updateCardAmounts={updateCardAmount}
+                        foilCardAmounts={foilCardAmounts}
+                        updateFoilCardAmounts={updateFoilCardAmount}
+                    />
+                </>
             }
 
             {cards.length === 0 && setMessage !== "" && setMessage !== "Unable to find set" &&
                 <Loading/>
             }
-            <div><button onClick={() => console.log(cards)}></button></div>
         </div>
+
+
     );
 }
 
