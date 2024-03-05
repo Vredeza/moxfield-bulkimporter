@@ -1,5 +1,4 @@
 import "./QuantitySelector.css"
-import {useState} from "react";
 
 function QuantitySelector({updateQuantity, quantity}) {
 
