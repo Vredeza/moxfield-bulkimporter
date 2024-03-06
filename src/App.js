@@ -8,8 +8,6 @@ import DownloadButton from "./DownloadButton";
 import Loading from "./Loading";
 import CardAdder from "./CardAdder";
 
-
-
 function App() {
 
     const languageList =["French", "English"];
@@ -154,7 +152,16 @@ function App() {
 
             {cards.length !== 0 &&
                 <>
-                    <CardAdder/>
+                    <CardAdder
+                        cards={cards}
+                        addNonFoil={(index, amount) => {
+                            updateCardAmount(index, cardAmounts[index] + amount)
+                        }}
+                        addFoil={(index, amount) => {
+                            updateFoilCardAmount(index, foilCardAmounts[index] + amount)
+                        }}
+                    />
+
                     <CardTab
                         cards={cards}
                         cardAmounts={cardAmounts}
