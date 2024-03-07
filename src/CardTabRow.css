@@ -15,3 +15,7 @@ tbody>tr:hover * {
     width: 3%;
     text-align: center;
 }
+
+.tableRow.hidden{
+    display: none;
+}

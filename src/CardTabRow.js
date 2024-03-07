@@ -2,7 +2,9 @@ import "./CardTabRow.css"
 import QuantitySelector from "./QuantitySelector";
 import ManaCost from "./ManaCost";
 
-function CardTabRow({card, cardAmount, foilCardAmount, updateCardAmount, updateFoilCardAmount, symbology}){
+function CardTabRow({card, cardAmount, foilCardAmount, updateCardAmount, updateFoilCardAmount, symbology, showAllCards}){
+
+    const isHidden = foilCardAmount === 0 && cardAmount === 0;
 
     let imageUri
     let mana_cost
@@ -18,7 +20,7 @@ function CardTabRow({card, cardAmount, foilCardAmount, updateCardAmount, updateF
     mana_cost === "" ? mana_cost = "-" : mana_cost = mana_cost;
 
     return (
-        <tr className={"tableRow"}>
+        <tr className={`tableRow ${(!showAllCards && isHidden) ? "hidden" : ""}`}>
             <td className={"cardNumber"}>{card.collector_number}</td>
             <td id={"name"}>
                 <a href={card.scryfall_uri} target="_blank" rel="noreferrer">
