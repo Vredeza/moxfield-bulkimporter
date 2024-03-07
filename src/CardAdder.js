@@ -38,8 +38,8 @@ function CardAdder({ cards, addNonFoil, addFoil }) {
 
         const index = getIndexFromCardNumber()
         if (index !== -1){
-            setIsLastAddedCardFoil(false)
-            addNonFoil(index, 1)
+            setIsLastAddedCardFoil(true)
+            addFoil(index, 1)
         }
         setLastAddedCardIndex(index)
         setCardNumber('');
@@ -57,6 +57,7 @@ function CardAdder({ cards, addNonFoil, addFoil }) {
 
     return (
         <div className={"cardAdder"}>
+            <p>Add cards : </p>
             <div className={"cardAdderInput"}>
                 <input
                     type={"text"}
@@ -85,10 +86,15 @@ function CardAdder({ cards, addNonFoil, addFoil }) {
                 {lastAddedCardIndex >= 0 &&
                     <>
                         <span>
-                            Added {isLastAddedCardFoil && "foil"}
+                            Added {isLastAddedCardFoil && "foil "}
                             <span className={"addedCardName"}>
                                 {cards[lastAddedCardIndex].name}
-                                <img src={cards[lastAddedCardIndex].image_uris.small} alt={cards[lastAddedCardIndex].name} loading="lazy" className={"cardImage"}/>
+                                <img
+                                    src={(cards[lastAddedCardIndex].image_uris && cards[lastAddedCardIndex].image_uris.small) || (cards[lastAddedCardIndex].card_faces && cards[lastAddedCardIndex].card_faces[0].image_uris && cards[lastAddedCardIndex].card_faces[0].image_uris.small)}
+                                    alt={cards[lastAddedCardIndex].name}
+                                    loading="lazy"
+                                    className={"cardImage"}
+                                />
                             </span>
                         </span>
                         <input
